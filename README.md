@@ -18,7 +18,7 @@ gem install panda_api
  2. Visit "My Applications" Tab 
  3. Create PandaDoc Application (Application Name, Application Author, Redirect URI)
  4. Upon completion, you will receive a Client ID and Client Secret
- 5. Install panda_api gem and instiate the class 
+ 5. Install panda_api gem and instantiate the class 
 ```ruby 
 panda_api_instance = PandaDoc.new(key: "", key_type: "")  
 ```
