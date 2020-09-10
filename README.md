@@ -123,7 +123,7 @@ panda_api_instance = PandaDoc.new(key: "", key_type: "")
   panda_doc_api.delete_document({ id: <YOUR_DOC_ID> })
   
   # Delete Template (DELETE)
-  panda_doc_api.delete_document({ id: <YOUR_DOC_ID> })
+  panda_doc_api.delete_template({ id: <YOUR_TEMP_ID> })
   
   # Create Document Folder (POST)
   panda_doc_api.create_document_folder({ name: "<YOUR_NEW_FOLDER_NAME>" })
