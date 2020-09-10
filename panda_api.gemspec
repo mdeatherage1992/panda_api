@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'panda_api'
-  s.version     = '0.0.2'
-  s.date        = '2020-09-03'
+  s.version     = '0.0.4'
+  s.date        = '2020-09-10'
   s.summary     = "PandaDoc API"
   s.description = "Wrapper for PandaDoc API"
   s.authors     = ["Matt Deatherage"]

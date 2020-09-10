@@ -180,8 +180,9 @@ class PandaDoc
       "grant_type": "refresh_token",
       "client_id": @client_id || params[:client_id],
       "client_secret": @client_secret || params[:client_secret],
-      "refresh_token": @key,
-      "scope": 'read+write'
+      "refresh_token": params[:refresh_token],
+      "code": params[:code],
+      "scope": params[:scope] || 'read+write'
     }
 
     missing_keys = parsed_params.keys.select { |p| parsed_params[p.to_sym].nil? }
@@ -193,6 +194,26 @@ class PandaDoc
     @key_type = "bearer"
 
     res
+  end
+
+  def delete_document(params = nil)
+    raise_if_no_id(params)
+    self.class.delete("https://api.pandadoc.com/public/v1/documents/#{params[:id]}", headers: headers).parsed_response
+  end
+
+  def delete_template(params = nil)
+    raise_if_no_id(params)
+    self.class.delete("https://api.pandadoc.com/public/v1/templates/#{params[:id]}", headers: headers).parsed_response
+  end
+
+  def update_document_folder(params = nil)
+    raise_if_no_id(params)
+    self.class.put("https://api.pandadoc.com/public/v1/documents/folders/#{params[:id]}", headers: headers, body: JSON.dump(params)).parsed_response
+  end
+
+  def update_template_folder(params = nil)
+    raise_if_no_id(params)
+    self.class.put("https://api.pandadoc.com/public/v1/templates/folders/#{params[:id]}", headers: headers, body: JSON.dump(params)).parsed_response
   end
 
   protected
