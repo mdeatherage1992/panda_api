@@ -141,7 +141,7 @@ panda_api_instance = PandaDoc.new(key: "", key_type: "")
   panda_doc_api.update_document_folder({ <YOUR_PARAMS> })
   
   # Update Template Folder Name (PUT)
-  panda_doc_api.update_document_folder({ YOUR_PARAMS })
+  panda_doc_api.update_template_folder({ YOUR_PARAMS })
  ```
  
  # Questions / Concerns 
